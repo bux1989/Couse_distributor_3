@@ -1,0 +1,13 @@
+{
+  "name": "weweb-plugin-check",
+  "private": true,
+  "devDependencies": {
+    "vite": "^5.4.9",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vue": "^3.5.8"
+  },
+  "scripts": {
+    "build": "vite build --config vite.config.ts",
+    "check:config": "node -e \"require('../ww-config.js'); console.log('ww-config.js OK')\""
+  }
+}
