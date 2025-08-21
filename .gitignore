@@ -1,1 +1,27 @@
-node_modules
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+.weweb-check/dist/
+
+# Caches
+.vite/
+.cache/
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
