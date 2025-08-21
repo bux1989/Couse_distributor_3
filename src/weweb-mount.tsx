@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App'; // adjust if your main component is elsewhere
+import App from './App'; // adjust if your main component lives elsewhere
 
 type MountAPI = {
   update?: (nextProps: any) => void;
@@ -17,10 +17,8 @@ function mount(el: HTMLElement, initialProps: any, callbacks: any): MountAPI {
   const root = createRoot(el);
   const render = (p: any) => {
     root.render(
-      // Remove StrictMode if it causes double effects during dev
       <App
         {...p}
-        // Forward callbacks into your app
         onAddNote={callbacks?.onAddNote}
         onDeleteNote={callbacks?.onDeleteNote}
         onToggleNoteProblem={callbacks?.onToggleNoteProblem}
@@ -36,14 +34,9 @@ function mount(el: HTMLElement, initialProps: any, callbacks: any): MountAPI {
   };
   render(initialProps);
   return {
-    update(nextProps: any) {
-      render(nextProps);
-    },
-    unmount() {
-      root.unmount();
-    },
+    update(nextProps: any) { render(nextProps); },
+    unmount() { root.unmount(); },
   };
 }
 
-// Expose global for the WeWeb element to call
 window.CourseEnrollmentMount = (el, props, callbacks) => mount(el, props, callbacks);
