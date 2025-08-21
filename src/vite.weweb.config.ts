@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@radix-ui/react-select@2.1.6": "@radix-ui/react-select"
+      "@radix-ui/react-select": "@radix-ui/react-select"
     }
   },
   build: {
