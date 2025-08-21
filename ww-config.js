@@ -1,3 +1,4 @@
+//test 
 module.exports = {
   name: 'course-enrollment',
   label: 'Course Enrollment',
